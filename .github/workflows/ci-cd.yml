@@ -30,3 +30,18 @@ jobs:
 
       - name: Ejecutar pruebas
         run: pytest -v
+
+  build-and-deploy:
+    name: Build and Deploy
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Construir imagen Docker
+        run: docker build -t api-seguridad-cicd .
+
+      - name: Verificar imagen
+        run: docker images api-seguridad-cicd
