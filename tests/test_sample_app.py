@@ -11,7 +11,7 @@ def test_home():
 
     response = client.get("/")
 
-    assert response.status_code == 20
+    assert response.status_code == 200
 
     data = response.get_json()
     assert data["status"] == "ok"
