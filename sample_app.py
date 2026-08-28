@@ -8,7 +8,7 @@ def home():
     return jsonify({
         "message": "API de Actualizada correctamente",
         "status": "ok"
-    }), 500
+    }), 200
 
 
 @app.route("/health")
@@ -19,4 +19,4 @@ def health():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
